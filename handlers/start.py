@@ -8,7 +8,7 @@ from keyboards.menu_kb import main_menu_kb
 
 start_router = Router()
 
-@start_router.message(commands=["start"])
+@start_router.message(Command("start"))
 async def cmd_start(message: Message):
     user_data = get_user_by_telegram_id(message.from_user.id)
     if not user_data:

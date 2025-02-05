@@ -8,7 +8,7 @@ from config import DB_PATH
 admin_router = Router()
 SUPER_ADMIN_ID = None  # Значение будет установлено в bot.py
 
-@admin_router.message(commands=["confirm"])
+@admin_router.message(Command("confirm"))
 async def confirm_payment_cmd(message: Message):
     if message.from_user.id != SUPER_ADMIN_ID:
         return
@@ -60,7 +60,7 @@ async def confirm_payment_cmd(message: Message):
         logging.exception("Ошибка при подтверждении платежа.")
         await message.answer(f"Ошибка при подтверждении платежа: {str(e)}")
 
-@admin_router.message(commands=["rejectpay"])
+@admin_router.message(Command("rejectpay"))
 async def reject_payment_cmd(message: Message):
     if message.from_user.id != SUPER_ADMIN_ID:
         return
