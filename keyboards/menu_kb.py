@@ -1,6 +1,6 @@
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 from aiogram.types import InlineKeyboardButton
-
+# meny keboard
 def main_menu_kb(t: dict):
     kb = InlineKeyboardBuilder()
     kb.button(text=t["btn_categories"], callback_data="show_categories")

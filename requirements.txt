@@ -1,4 +1,3 @@
-aiogram==3.0.0b7
+aiogram
 cryptography==41.0.3
-sqlite3-bro==0.1.2    # Обычно sqlite входит в стандартную библиотеку Python
 python-dotenv==1.0.0  # Если захотите использовать dotenv

@@ -1,0 +1,33 @@
+Below is a brief summary of what has been implemented in the bot at the current stage:
+
+Catalog Mechanics
+Support for categories (from the Categories table), subcategories (type), and products (Products).
+When selecting a category and subcategory, a list of available products is displayed, considering their quantity (quantity > 0).
+The "Back" button at each step returns to the previous level (or to the main menu).
+Product Purchases
+Each product displays its price and description, with a "Buy" button available.
+Logic for fund deduction, checking and updating product stock, and recording the purchase in the Purchase table.
+Balance and Top-Up
+Each user in the Users table has a balance field, which is updated upon purchases and when payments are confirmed by an administrator.
+Balance top-up functionality: amount selection, currency selection (LTC, TRX) based on rates from the RatesY table, and payment screenshot submission.
+Administrative Functions
+Commands /confirm user_id amount and /rejectpay user_id amount (or inline button options if enabled) for confirming or rejecting payments.
+Upon payment confirmation, the user's balance increases, and the payment status changes to "confirmed". If rejected, the status is set to "rejected".
+Multilingual Support
+Two languages are supported (ru/en).
+The default language is determined via the Users table (language field) or, on first entry, through user.language_code as a fallback.
+A "Change Language" button allows manual switching, and the bot immediately updates the main menu.
+Main Menu
+The /start command or pressing "Back to Menu" displays a welcome image and the main menu keyboard.
+Buttons: "Categories" (navigate to category selection), "About the Bot", "Profile", "Change Language".
+"About the Bot" Function
+Displays a general description, the total number of products, and the number of unique categories (via JOIN query).
+Profile
+Displays user information (username, balance) and a profile placeholder icon.
+The "Back" or "Main Menu" button returns to the start screen.
+Security and Internal Details
+To confirm payments, the user must send a screenshot, which is stored on the server.
+The admin receives a notification with the screenshot, where they can approve or reject the payment.
+Error Handling
+In case of errors (e.g., photo not sent, product not found), a fallback message is displayed to the user, while detailed error logs are recorded.
+Thus, the bot already includes all the basic store mechanisms: catalog with stock tracking, purchases, balance system, payment confirmation via screenshots, and an admin panel for managing payments and products in the database. Many aspects were improved during debugging (switching to callback_query.from_user instead of message.from_user, updated "Back" buttons, support for Russian/English localization, etc.).

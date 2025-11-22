@@ -6,9 +6,10 @@ def payment_amount_kb():
     Пример: суммы в Y: 100, 200, 300
     """
     kb = InlineKeyboardBuilder()
-    kb.button(text="100Y", callback_data="amount_100")
-    kb.button(text="200Y", callback_data="amount_200")
-    kb.button(text="300Y", callback_data="amount_300")
+    kb.button(text="30 usd", callback_data="amount_30")
+    kb.button(text="90 usd", callback_data="amount_90")
+    kb.button(text="180 usd", callback_data="amount_180")
+    kb.button(text="Указать свою сумму", callback_data="enter_custom_amount")
     kb.adjust(1)
     return kb.as_markup()
 

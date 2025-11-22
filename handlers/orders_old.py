@@ -70,3 +70,4 @@ async def buy_item_callback(call: CallbackQuery):
     # В конце — возвращаемся в главное меню (без кнопки «Назад», как по условию).
     await call.message.answer("Главное меню", reply_markup=None)
     await call.answer("Покупка оформлена!")
+#
