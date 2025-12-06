@@ -140,3 +140,21 @@ sudo systemctl enable bot.service
 4. When placing an order/application, the bot guides the user through sequential steps and sends notifications to the administrator.
 
 This instruction is basic and can be supplemented depending on the individual requirements of the project. If you have any questions about configuring or extending the functionality, refer to the Aiogram and SQLite documentation or contact the developer.
+
+## 📄 License
+
+This project is licensed under the **GNU Affero General Public License v3.0** (AGPL-3.0).
+
+### What does this mean?
+
+- ✅ You can use, modify, and distribute this software
+- ✅ You can use it commercially
+- ⚠️ If you modify and distribute it, you must open-source your changes
+- ⚠️ If you run it as a web service, you must provide source code to users 
+
+Full License text is available [here](https://www.gnu.org/licenses/agpl-3.0.html)
+
+### Commercial License
+
+If you want to use this software in a closed-source product or service,
+please contact us for a commercial license: m.lanin.dev@gmail.com
